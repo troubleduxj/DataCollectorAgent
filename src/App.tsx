@@ -6,6 +6,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
+import AgentWorkspace from './pages/AgentWorkspace';
+import AgentConfig from './pages/AgentConfig';
 import Protocols from './pages/Protocols';
 import Configuration from './pages/Configuration';
 import Security from './pages/Security';
@@ -17,6 +19,8 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/agent" element={<AgentWorkspace />} />
+          <Route path="/agent-config" element={<AgentConfig />} />
           <Route path="/protocols" element={<Protocols />} />
           <Route path="/config" element={<Configuration />} />
           <Route path="/security" element={<Security />} />

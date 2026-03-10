@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Settings, Network, Shield, FileText, Activity } from 'lucide-react';
+import { LayoutDashboard, Settings, Network, Shield, FileText, Activity, Bot, Cpu } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 const SidebarItem = ({ to, icon: Icon, label }: { to: string; icon: any; label: string }) => (
@@ -33,9 +33,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="mt-2 text-xs text-zinc-500 font-mono">v2.4.0-beta</div>
         </div>
 
-        <nav className="flex-1 py-6 space-y-1">
+        <nav className="flex-1 py-6 space-y-1 overflow-y-auto">
+          <div className="px-4 py-2 text-xs font-semibold text-zinc-500 uppercase tracking-wider">Core</div>
           <SidebarItem to="/" icon={LayoutDashboard} label="Dashboard" />
           <SidebarItem to="/protocols" icon={Network} label="Protocols" />
+          
+          <div className="px-4 py-2 mt-4 text-xs font-semibold text-zinc-500 uppercase tracking-wider">Intelligence</div>
+          <SidebarItem to="/agent" icon={Bot} label="Agent Workspace" />
+          <SidebarItem to="/agent-config" icon={Cpu} label="Agent Settings" />
+          
+          <div className="px-4 py-2 mt-4 text-xs font-semibold text-zinc-500 uppercase tracking-wider">System</div>
           <SidebarItem to="/config" icon={Settings} label="Configuration" />
           <SidebarItem to="/security" icon={Shield} label="Security" />
           <SidebarItem to="/logs" icon={FileText} label="System Logs" />
